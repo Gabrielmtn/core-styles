@@ -1,0 +1,27 @@
+// Two-tier color variable system
+
+/* color definitions */
+$white: hsla(0,0%,100%,1);
+$off-white: hsla(200,13%,95%,1);
+$blue: hsla(200,100%,40%,1);
+$grey: hsla(203,18%,36%,1);
+$dark-grey: hsla(203,18%,25%,1);
+$orangered: hsla(7,100%,64%,1);
+
+/* Use case variable names */
+
+// text
+$color-text: $grey;
+$color-text-headline: $grey;
+$color-text-lead: $grey;
+$color-text-link: $blue;
+$color-text-link-hover: $dark-grey;
+$color-text-link-active: $grey;
+
+//background
+$color-background-primary: $white;
+$color-background-secondary: $off-white;
+$color-background-primary-dark: $dark-grey;
+$color-background-secondary-dark: $grey;
+$color-background-accent: $orangered;
+
