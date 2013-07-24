@@ -1,7 +1,35 @@
 // Font
-@import url("http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:400,300");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:700,400,300");
 
 // Headings
 h1,h2,h3,h4,h5,h6 {
   @include headline();
+}
+.hero {
+  @include hero-text();
+}
+.lead {
+  @include lead-text();
+}
+p {
+  @include adjust-font-size-to( 1.125 * $base-font-size );
+  font-family: 'Open Sans', sans-serif;
+  color: $color-text;
+  line-height: 1.125 * $base-line-height;
+  
+  strong {
+    font-weight: 800;
+  }
+  
+  a {
+    color: $color-text-link;
+    text-decoration: none;
+    @include transition();
+    &:hover {
+      text-decoration: underline;
+    }
+    &:active {
+      color: $color-text-link-active;
+    }
+  }
 }

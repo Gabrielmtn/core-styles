@@ -54,12 +54,80 @@
   font-weight: 800;
   color: $color-text-headline;
 }
-@mixin hero {
+@mixin dividing-headline ($line-color, $background-color) {
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: solid 1px $line-color;
+  /* pull the border up*/
+  height: 0.8em; 
+  /* push the paragraph down */
+  margin-bottom: 1.4em;
+  /* line cover */
+  &:first-line{
+    background-color: $background-color;
+    padding-left: 4em;
+   }
+  /* additional padding */
+  &:before,
+  &:after{
+    content: '\0000a0 \0000a0'; 
+  } 
+}
+@mixin hero-text {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   color: $color-text-headline;
+  @include adjust-font-size-to( 2.25 * $base-font-size);
+}
+@mixin lead-text {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: $color-text-headline;
+  @include adjust-font-size-to( 1.5 * $base-font-size);
+  line-height: 1.5 * $base-line-height;
 }
 
 // headings with lines behind them: http://jsbin.com/uwefuy/1/edit
 
-// Links/Toggles/Link lists
+// Buttons
+@mixin button-primary {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight:800;
+  color: $color-button-primary-text;
+  padding: 1em 4em;
+  display: inline-block;
+  border-radius: $default-border-radius;
+  background: $color-button-primary-background;
+  @include box-shadow( 0px 3px 0px $color-button-primary-background);
+}
+
+@mixin button-secondary {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight:800;
+  color: $color-button-secondary-text;
+  padding: 1em 4em;
+  display: inline-block;
+  border-radius: $default-border-radius;
+  background: $color-button-secondary-background;
+  border: 1px solid $color-button-secondary-border;
+  @include transition;
+  &:hover {
+    border: 1px solid $color-button-secondary-border-hover;
+  }
+  &:active {
+    background: $color-button-secondary-background-active;
+  }
+}
+@mixin button-strong{
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight:800;
+  color: $color-button-strong-text;
+  padding: 1em 4em;
+  display: inline-block;
+  border-radius: $default-border-radius;
+  background: $color-button-strong-background;
+  @include box-shadow( 0px 3px 0px hsla(7,77%,27%,1));
+}
