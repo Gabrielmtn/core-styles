@@ -39,6 +39,7 @@
 
 // Buttons
 @mixin button-primary {
+  @include transition(background);
   text-transform: uppercase;
   text-decoration: none;
   font-weight:800;
@@ -79,6 +80,7 @@
   }
 }
 @mixin button-strong{
+  @include transition();
   text-transform: uppercase;
   text-decoration: none;
   font-weight:800;
@@ -97,6 +99,44 @@
     background: $gradient-orangered-light;
     @include background( $gradient-orangered );
     @include box-shadow( inset  0px 3px 0px $orangered-dark );
+  }
+}
+
+// TODO update gradients with actuals from psd source
+// TODO rework mixin to account for a light or dark version
+// TODO add conditional box shadows, depressed states, etc
+// Toggle Links
+@mixin toggle-links { // apply to <nav> element
+  ul {
+    @include horizontal-list();
+    li {
+      margin:0;
+      padding: 0;
+      a {
+        background: $gradient-blue-light;
+        @include background( $gradient-blue );
+        padding: 1em;
+        display: block;
+        border-top: 1px solid $grey;
+        border-bottom: 1px solid $grey;
+        border-left: 1px solid $grey;
+        color: $white;
+        &:hover {
+          text-decoration: none;
+          @include background( $gradient-blue-hover );
+        }
+      }
+      &:first-child {
+        a {
+          @include border-radius( $default-border-radius 0 0 $default-border-radius );
+        }
+      }
+      &:last-child {
+        a {
+          @include border-radius( 0 $default-border-radius $default-border-radius 0 );
+        }
+      }
+    }
   }
 }
 

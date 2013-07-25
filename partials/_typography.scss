@@ -5,21 +5,27 @@
 h1,h2,h3,h4,h5,h6 {
   @include headline();
 }
+
+// Semi-display text
 .hero {
   @include hero-text();
 }
 .lead {
   @include lead-text();
 }
-p {
+
+// regular text
+body {
   font-family: 'Open Sans', sans-serif;
   color: $color-text;
+}
+p {
   line-height: 1.125 * $base-line-height;
 }  
 strong {
   font-weight: 800;
 }
-
+// links
 a {
   color: $color-text-link;
   text-decoration: none;
