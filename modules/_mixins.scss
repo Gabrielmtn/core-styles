@@ -1,3 +1,9 @@
+/* TODO
+  buttons: update gradients with actuals from psd source
+  buttons: add conditional box shadows on buttons for dark backgrounds
+  toggles: rework mixin to account for a light or dark version
+*/
+
 // Typography
 @mixin headline {
   font-family: 'Open Sans Condensed', sans-serif;
@@ -34,7 +40,7 @@
   font-weight: 300;
   color: $color-text-headline;
   @include adjust-font-size-to( 1.3333 * $base-font-size);
-  line-height: 1.5 * $base-line-height;
+  line-height: 1.3333 * $base-line-height;
 }
 
 // Buttons
@@ -49,15 +55,15 @@
   border-radius: $default-border-radius;
   background: $gradient-blue-light;
   @include background( $gradient-blue );
-  @include box-shadow( 0px 3px 0px $color-button-primary-background);
+  border-bottom: 3px solid $color-button-primary-background;
   &:hover {
     background: $gradient-blue-light-hover;
     @include background( $gradient-blue-hover );
   }
   &:active {
     @include background( $gradient-blue );
-    @include box-shadow( 0px 3px 0px $color-button-primary-background);
-    @include box-shadow( inset 0px 3px 0px $color-button-primary-background);
+    border-bottom: none;
+    border-top: 3px solid $color-button-primary-background;
   }
 }
 
@@ -80,7 +86,7 @@
   }
 }
 @mixin button-strong{
-  @include transition();
+  @include transition( background );
   text-transform: uppercase;
   text-decoration: none;
   font-weight:800;
@@ -90,7 +96,7 @@
   border-radius: $default-border-radius;
   background: $gradient-orangered-light;
   @include background( $gradient-orangered );
-  @include box-shadow( 0px 3px 0px $orangered-dark );
+  border-bottom: 3px solid $orangered-dark;
   &:hover {
     background: $gradient-orangered-light-hover;
     @include background( $gradient-orangered-hover );
@@ -98,13 +104,11 @@
   &:active {
     background: $gradient-orangered-light;
     @include background( $gradient-orangered );
-    @include box-shadow( inset  0px 3px 0px $orangered-dark );
+    border-bottom: none;
+    border-top: 3px solid $orangered-dark;
   }
 }
 
-// TODO update gradients with actuals from psd source
-// TODO rework mixin to account for a light or dark version
-// TODO add conditional box shadows, depressed states, etc
 // Toggle Links
 @mixin toggle-links { // apply to <nav> element
   ul {
