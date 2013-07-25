@@ -27,13 +27,13 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   color: $color-text-headline;
-  @include adjust-font-size-to( 2.25 * $base-font-size);
+  @include adjust-font-size-to( 2 * $base-font-size);
 }
 @mixin lead-text {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   color: $color-text-headline;
-  @include adjust-font-size-to( 1.5 * $base-font-size);
+  @include adjust-font-size-to( 1.3333 * $base-font-size);
   line-height: 1.5 * $base-line-height;
 }
 
