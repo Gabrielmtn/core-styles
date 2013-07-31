@@ -52,7 +52,7 @@ $color-button-secondary-text: $grey;
 $color-button-secondary-background: $off-white;
 $color-button-secondary-background-active: $off-white-dark;
 $color-button-secondary-border: $off-white-dark;
-$color-button-secondary-border-hover: hsla(0,0%,76%,1);
+$color-button-secondary-border-hover: darken( $off-white-dark, 10% );
 $color-button-strong-text: $off-white;
 
 $color-button-strong-text: $white;
