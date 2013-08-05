@@ -11,6 +11,19 @@
   margin-right: auto;
   max-width: 1000px;
 }
+@mixin grayscale-image {
+  filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
+  filter: gray; /* IE5+ */
+  -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+}
+@mixin greyscale-image {
+  filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
+  filter: gray; /* IE5+ */
+  -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+}
+@mixin circular-image {
+  @include border-radius( 100% );
+}
 
 // Typography
 @mixin headline {
@@ -19,11 +32,15 @@
   color: $color-text-headline;
 }
 @mixin dividing-headline ($line-color, $background-color) {
+  font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   text-align: center;
+  letter-spacing: 1px;
   border-bottom: solid 1px $line-color;
+  /* adjust font size */
+  font-size: $base-font-size;
   /* pull the border up*/
-  height: 0.8em; 
+  height: 0.9em; 
   /* push the paragraph down */
   margin-bottom: 1.4em;
   /* line cover */
@@ -34,7 +51,7 @@
   /* additional padding */
   &:before,
   &:after{
-    content: '\0000a0 \0000a0'; 
+   content: '\00a0 \00a0 \00a0 \00a0'; 
   } 
 }
 @mixin hero-text {
@@ -156,6 +173,25 @@
 }
 
 // Menu Items
+
+@mixin button( $text-color, $background-color, $hover-text-color, $hover-background-color ) {
+  color: $text-color;
+  @include transition();
+  @include border-radius;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  @include adjust-font-size-to( 0.75 * $base-font-size );
+  display: block;
+  padding: 0.25em 0.75em;
+  font-weight: 700;
+  background: $background-color;
+  &.active, &.active-trail, &:hover {
+    color: $hover-text-color;
+    background: $hover-background-color;
+    text-decoration: none;
+  }
+}
+
 @mixin vertical-menu {
   margin-left: 0;
   margin-right: 0;
@@ -168,22 +204,7 @@
       margin:0 0 0.5em 0;
       padding:0;
       a {
-        @include transition();
-        @include border-radius;
-        text-transform: uppercase;
-        @include adjust-font-size-to( 0.75 * $base-font-size );
-        display: block;
-        padding: 0.25em 0.75em;
-        font-weight: 700;
-        &.active, &.active-trail {
-          color: $grey;
-          background: darken($color-button-secondary-background, 5%);
-        }
-        &:hover {
-          background: darken($color-button-secondary-background, 10%);
-          text-decoration: none;
-          color: $grey;
-        }
+        @include button( $grey, $white, $grey, $off-white );
       }
     }
   }
@@ -203,27 +224,7 @@
         display: none;
       }
       a {
-        color: $grey;
-        @include transition();
-        @include border-radius;
-        text-transform: uppercase;
-        @include adjust-font-size-to( 0.75 * $base-font-size );
-        display: block;
-        padding: 0.25em 0.75em;
-        font-weight: 700;
-        background: $color-background-secondary;
-        border: 1px solid $color-background-secondary;
-        &.active, &.active-trail {
-          color: $grey;
-          background: $white;
-          border: 1px solid $color-button-secondary-border;
-        }
-        &:hover {
-          background: $white;
-          border: 1px solid $color-button-secondary-border-hover;
-          text-decoration: none;
-          color: $grey;
-        }
+        @include button( $grey, $off-white, $grey, $white );
       }
     }
   }
