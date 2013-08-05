@@ -11,16 +11,6 @@ $orangered: hsla(7,100%,64%,1);
 $orangered-dark: hsla(7,77%,27%,1);
 
 
-$gradient-blue-light: hsla(200,82%,62%,1);
-$gradient-blue-light-hover: lighten( $gradient-blue-light, 5% );
-$gradient-blue-dark: hsla(200,69%,57%,1);
-$gradient-blue-dark-hover: lighten( $gradient-blue-dark, 5% );
-
-$gradient-orangered-light: hsla(7,100%,64%,1);
-$gradient-orangered-light-hover: lighten( $gradient-orangered-light, 5% );
-$gradient-orangered-dark: hsla(7,59%,51%,1);
-$gradient-orangered-dark-hover: lighten( $gradient-orangered-dark, 5% );
-
 /* Use descriptive variable names */
 
 // text
@@ -31,12 +21,6 @@ $color-text-link: $blue;
 $color-text-link-hover: $dark-grey;
 $color-text-link-active: $grey;
 
-// gradient
-$gradient-blue: linear-gradient( $gradient-blue-light, $gradient-blue-dark );
-$gradient-blue-hover: linear-gradient( $gradient-blue-light-hover, $gradient-blue-dark-hover );
-$gradient-orangered: linear-gradient( $gradient-orangered-light, $gradient-orangered-dark );
-$gradient-orangered-hover: linear-gradient( $gradient-orangered-light-hover, $gradient-orangered-dark-hover );
-
 //background
 $color-background-primary: $white;
 $color-background-secondary: $off-white;
@@ -45,15 +29,26 @@ $color-background-secondary-dark: $grey;
 $color-background-accent: $orangered;
 
 // buttons
-$color-button-primary-text: $white;
-$color-button-primary-background: $blue;
+$btn-primary-text: $white;
+$btn-primary-gradient-top: #41b0ec;
+$btn-primary-gradient-bottom: #3ca3da;
+$btn-primary-background: linear-gradient( $btn-primary-gradient-top, $btn-primary-gradient-bottom ); 
+$btn-primary-background-hover: #4dc1ff;
+$btn-primary-background-active: linear-gradient( $btn-primary-gradient-top, $btn-primary-gradient-bottom ); 
+$btn-primary-border: #2a84b4;
+$btn-primary-border-active: #2f98d0;
 
-$color-button-secondary-text: $grey;
-$color-button-secondary-background: $off-white;
-$color-button-secondary-background-active: $off-white-dark;
-$color-button-secondary-border: $off-white-dark;
-$color-button-secondary-border-hover: darken( $off-white-dark, 10% );
-$color-button-strong-text: $off-white;
+$btn-secondary-text: $grey;
+$btn-secondary-background: #f3f4f5;
+$btn-secondary-background-active: #e0e4e5;
+$btn-secondary-border: #dbdbdb;
+$btn-secondary-border-hover: #c2c2c2;
 
-$color-button-strong-text: $white;
-$color-button-strong-background: $orangered;
+$btn-strong-text: $white;
+$btn-strong-gradient-top: #ff5c46;
+$btn-strong-gradient-bottom: #cc4837;
+$btn-strong-background: linear-gradient( $btn-strong-gradient-top, $btn-strong-gradient-bottom ); 
+$btn-strong-background-hover: #ff5c46;
+$btn-strong-background-active: linear-gradient( $btn-strong-gradient-top, $btn-strong-gradient-bottom ); 
+$btn-strong-border: #82291d;
+$btn-strong-border-active: #c24535;

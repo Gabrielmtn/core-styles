@@ -19,10 +19,11 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: $color-text;
 }
-p {
+p, ul, ol, li, a, table, summary, details, pre, blockquote, dl, dd, dt {
+  font-size: $p-font-size;
 }  
 strong {
-  font-weight: 800;
+  font-weight: 700;
 }
 // links
 a {

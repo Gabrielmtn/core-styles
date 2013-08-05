@@ -28,7 +28,7 @@
 // Typography
 @mixin headline {
   font-family: 'Open Sans Condensed', sans-serif;
-  font-weight: 800;
+  font-weight: 700;
   color: $color-text-headline;
 }
 @mixin dividing-headline ($line-color, $background-color) {
@@ -38,7 +38,7 @@
   letter-spacing: 1px;
   border-bottom: solid 1px $line-color;
   /* adjust font size */
-  font-size: $base-font-size;
+  @include adjust-font-size-to( $h5-font-size );
   /* pull the border up*/
   height: 0.9em; 
   /* push the paragraph down */
@@ -58,118 +58,84 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   color: $color-text-headline;
-  @include adjust-font-size-to( 2 * $base-font-size);
+  font-size: $hero-font-size;
 }
 @mixin lead-text {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   color: $color-text-headline;
-  @include adjust-font-size-to( 1.3333 * $base-font-size);
   line-height: 1.3333 * $base-line-height;
+  font-size: $lead-font-size;
 }
 
 // Buttons
 @mixin button-primary {
+  font-size: $btn-font-size;
   letter-spacing: 1px;
-  @include transition(background);
   text-transform: uppercase;
   text-decoration: none;
-  font-weight:800;
-  color: $color-button-primary-text;
+  font-weight:700;
+  color: $btn-primary-text;
   padding: 1em 4em;
   display: inline-block;
   border-radius: $default-border-radius;
-  background: $gradient-blue-light;
-  @include background( $gradient-blue );
-  border-bottom: 3px solid $color-button-primary-background;
+  background: $btn-primary-gradient-bottom;
+  @include background-image( $btn-primary-background );
+  border-bottom: 3px solid $btn-primary-border;
   &:hover {
-    background: $gradient-blue-light-hover;
-    @include background( $gradient-blue-hover );
+    background: $btn-primary-background-hover;
   }
   &:active {
-    @include background( $gradient-blue );
     border-bottom: none;
-    border-top: 3px solid $color-button-primary-background;
+    border-top: 3px solid $btn-primary-border-active;
+    @include background-image( $btn-primary-background-active );
   }
 }
 
 @mixin button-secondary {
+  font-size: $btn-font-size;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
-  font-weight:800;
-  color: $color-button-secondary-text;
+  font-weight:700;
+  color: $btn-secondary-text;
   padding: 1em 4em;
   display: inline-block;
   border-radius: $default-border-radius;
-  background: $color-button-secondary-background;
-  border: 1px solid $color-button-secondary-border;
-  @include transition;
+  background: $btn-secondary-background;
+  border: 1px solid $btn-secondary-border;
   &:hover {
-    border: 1px solid $color-button-secondary-border-hover;
+    border: 1px solid $btn-secondary-border-hover;
   }
   &:active {
-    background: $color-button-secondary-background-active;
+    background: $btn-secondary-background-active;
   }
 }
-@mixin button-strong{
+@mixin button-strong {
+  font-size: $btn-font-size;
   letter-spacing: 1px;
-  @include transition( background );
   text-transform: uppercase;
   text-decoration: none;
-  font-weight:800;
-  color: $color-button-strong-text;
+  font-weight:700;
+  color: $btn-strong-text;
   padding: 1em 4em;
   display: inline-block;
   border-radius: $default-border-radius;
-  background: $gradient-orangered-light;
-  @include background( $gradient-orangered );
-  border-bottom: 3px solid $orangered-dark;
+  background: $btn-strong-gradient-bottom;
+  @include background-image( $btn-strong-background );
+  border-bottom: 3px solid $btn-strong-border;
   &:hover {
-    background: $gradient-orangered-light-hover;
-    @include background( $gradient-orangered-hover );
+    background: $btn-strong-background-hover;
   }
   &:active {
-    background: $gradient-orangered-light;
-    @include background( $gradient-orangered );
     border-bottom: none;
-    border-top: 3px solid $orangered-dark;
+    border-top: 3px solid $btn-strong-border-active;
+    @include background-image( $btn-strong-background-active );
   }
 }
 
 // Toggle Links
 @mixin toggle-links { // apply to <nav> element
-  ul {
-    @include horizontal-list();
-    li {
-      margin:0;
-      padding: 0;
-      a {
-        background: $gradient-blue-light;
-        @include background( $gradient-blue );
-        padding: 1em;
-        display: block;
-        border-top: 1px solid $grey;
-        border-bottom: 1px solid $grey;
-        border-left: 1px solid $grey;
-        color: $white;
-        &:hover {
-          text-decoration: none;
-          @include background( $gradient-blue-hover );
-        }
-      }
-      &:first-child {
-        a {
-          @include border-radius( $default-border-radius 0 0 $default-border-radius );
-        }
-      }
-      &:last-child {
-        a {
-          @include border-radius( 0 $default-border-radius $default-border-radius 0 );
-        }
-      }
-    }
-  }
 }
 
 // Menu Items
