@@ -25,6 +25,9 @@ p, ul, ol, li, a, table, summary, details, pre, blockquote, dl, dd, dt {
 strong {
   font-weight: 700;
 }
+small {
+  font-size: $base-font-size;
+}
 // links
 a {
   color: $color-text-link;
