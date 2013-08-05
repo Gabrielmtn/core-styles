@@ -58,7 +58,7 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   color: $color-text-headline;
-  font-size: $hero-font-size;
+  @include adjust-font-size-to( $hero-font-size );
 }
 @mixin lead-text {
   font-family: 'Open Sans', sans-serif;
