@@ -214,8 +214,9 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   @include adjust-font-size-to( 0.75 * $base-font-size );
+  line-height: 2.5em;
   display: block;
-  padding: 0.25em 0.75em;
+  padding: 0 0.75em;
   font-weight: 700;
   background: $background-color;
   &.active, &.active-trail, &:hover {
