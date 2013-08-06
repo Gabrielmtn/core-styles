@@ -59,3 +59,18 @@ $btn-disabled-gradient-top: $off-white-dark;
 $btn-disabled-gradient-bottom: darken($off-white-dark, 5%);
 $btn-disabled-background: linear-gradient( $btn-disabled-gradient-top, $btn-disabled-gradient-bottom ); 
 $btn-disabled-border: darken($off-white-dark, 10%);
+
+// Toggle Links
+$tl-border: #196B9A;
+$tl-link-border: #22729F;
+$tl-link-border-active: hsla(204,19%,26%,1);
+$tl-background-light: #43b2ed;
+$tl-background-dark: #1990cd;
+$tl-background-hover-light: #47bfff;
+$tl-background-hover-dark: #1ca2e5;
+$tl-background-active-light: #445763;
+$tl-background-active-dark: #34424b;
+$tl-background: linear-gradient( $tl-background-light, $tl-background-dark );
+$tl-background-hover: linear-gradient( $tl-background-hover-light, $tl-background-hover-dark );
+$tl-background-active: linear-gradient( $tl-background-active-light, $tl-background-active-dark );
+

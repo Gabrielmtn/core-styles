@@ -169,7 +169,40 @@
 
 
 // Toggle Links
-@mixin toggle-links { // apply to <nav> element
+@mixin toggle-links-light { // apply to <ul> element
+  display: inline-block;
+  @include border-radius;
+  overflow: hidden;
+  @include horizontal-list;
+  li {
+    margin: 0;
+    padding: 0;
+    white-space: normal;
+    text-align: center;
+    border-bottom: 1px solid $tl-border;
+    border-top: 1px solid $white;
+  }
+  a {
+    width: 190px;
+    @include background-image( $tl-background );
+    padding: 1em 0.25em;
+    display: block;
+    text-decoration: none;
+    color: $white;
+    border-left: 1px solid $tl-link-border;
+    border-right: 1px solid transparent;
+    &:hover {
+      @include background-image( $tl-background-hover );
+    }
+    &:active, &.active {
+      @include background-image( $tl-background-active );
+      border-left: 1px solid $tl-link-border-active;
+      border-right: 1px solid $tl-link-border-active;
+    }
+  }
+  li:first-child a {
+    border-left:1px solid transparent;
+  }
 }
 
 // Menu Items
@@ -196,7 +229,7 @@
   margin-left: 0;
   margin-right: 0;
   padding: 0;
-  ul.menu {
+  ul {
     margin: 1em 0;
     padding: 0 ;
     @include no-bullets;
@@ -211,7 +244,7 @@
 }
 
 @mixin horizontal-menu {
- > ul.menu {
+ > ul {
     margin: 2em 0;
     padding: 0;
     li {
