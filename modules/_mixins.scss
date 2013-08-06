@@ -79,6 +79,7 @@
 
 // Buttons
 @mixin button-primary {
+  @include transition(none);
   font-size: $btn-font-size;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -124,6 +125,7 @@
   }
 }
 @mixin button-strong {
+  @include transition(none);
   font-size: $btn-font-size;
   letter-spacing: 1px;
   text-transform: uppercase;
