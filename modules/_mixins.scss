@@ -1,5 +1,4 @@
 /* TODO
-  buttons: update gradients with actuals from psd source
   buttons: add conditional box shadows on buttons for dark backgrounds
   toggles: rework mixin to account for a light or dark version
   menus: rework mixin to accept args for background, border colors
@@ -216,8 +215,9 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   @include adjust-font-size-to( 0.75 * $base-font-size );
+  line-height: 2.5em;
   display: block;
-  padding: 0.25em 0.75em;
+  padding: 0 0.75em;
   font-weight: 700;
   background: $background-color;
   &.active, &.active-trail, &:hover {
