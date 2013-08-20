@@ -5,8 +5,11 @@
 h1,h2,h3,h4,h5,h6 {
   @include headline();
 }
-.dividing-headline {
-  @include dividing-headline($grey, $white);
+.dividing-headline-off-white {
+  @include dividing-headline(darken($off-white-dark, 20%), $off-white);
+}
+.dividing-headline-white {
+  @include dividing-headline(darken($off-white-dark, 20%), $white);
 }
 
 // Semi-display text
@@ -30,6 +33,18 @@ strong {
 }
 small {
   font-size: $base-font-size;
+}
+
+.pullquote{
+  @include hero-text;
+  color: $grey;
+  margin: 0;
+  &:before {
+    content: '“';
+  }
+  &:after {
+    content: '”';
+  }
 }
 // links
 a {
