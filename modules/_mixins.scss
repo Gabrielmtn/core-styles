@@ -23,6 +23,11 @@
 @mixin circular-image {
   @include border-radius( 100% );
 }
+@mixin dark-background {
+  h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, blockquote {
+    color: $white;
+  }
+}
 
 // Typography
 @mixin headline {
@@ -206,6 +211,42 @@
   }
 }
 
+@mixin toggle-links-dark{ // apply to <ul> element
+  display: inline-block;
+  @include border-radius;
+  overflow: hidden;
+  @include horizontal-list;
+  li {
+    margin: 0;
+    padding: 0;
+    white-space: normal;
+    text-align: center;
+    border-bottom: 1px solid $tl-border;
+    border-top: 1px solid $white;
+  }
+  a {
+    width: 190px;
+    @include background-image( $tl-background );
+    padding: 1em 0.25em;
+    display: block;
+    text-decoration: none;
+    color: $white;
+    border-left: 1px solid $tl-link-border;
+    border-right: 1px solid transparent;
+    &:hover {
+      @include background-image( $tl-background-hover );
+    }
+    &:active, &.active {
+      @include background-image( $tl-background-active );
+      border-left: 1px solid $tl-link-border-active;
+      border-right: 1px solid $tl-link-border-active;
+    }
+  }
+  li:first-child a {
+    border-left:1px solid transparent;
+  }
+}
+
 // Menu Items
 
 @mixin button( $text-color, $background-color, $hover-text-color, $hover-background-color ) {
@@ -249,6 +290,7 @@
  > ul {
     margin: 2em 0;
     padding: 0;
+    text-align: center;
     li {
       margin:0;
       padding:0;
@@ -256,7 +298,18 @@
       display: inline-block;
       overflow: visible;
       ul {
-        display: none;
+      display: none;
+        padding: 0;
+        text-align: center;
+        @include border-radius;
+        border: 5px solid $white;
+        background: $white;
+        > a {
+          border-top: 1px solid $off-white;
+          @include button( $grey, $white, $grey, $off-white );
+          @include border-radius(0px);
+          border: none;
+        }
       }
       a {
         @include button( $grey, $off-white, $grey, $white );

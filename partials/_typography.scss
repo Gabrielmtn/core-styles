@@ -7,6 +7,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 .dividing-headline-off-white {
   @include dividing-headline(darken($off-white-dark, 20%), $off-white);
+  margin: 2em 0;
 }
 .dividing-headline-white {
   @include dividing-headline(darken($off-white-dark, 20%), $white);

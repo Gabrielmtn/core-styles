@@ -137,7 +137,7 @@ a:hover {
 
     p,
     pre {
-        margin: rhythm(1) 0;
+        margin: 0 0 rhythm(1);
     }
 
     blockquote {
@@ -169,31 +169,31 @@ h1 {
     h2 {
         @include adjust-font-size-to( $h2-font-size );
         @include leader(1, $h2-font-size);
-        @include trailer(1, $h2-font-size);
+        @include trailer(0, $h2-font-size);
     }
 
     h3 {
         @include adjust-font-size-to( $h3-font-size );
         @include leader(1, $h3-font-size);
-        @include trailer(1, $h3-font-size);
+        @include trailer(0, $h3-font-size);
     }
 
     h4 {
         @include adjust-font-size-to( $h4-font-size );
         @include leader(1, $h4-font-size);
-        @include trailer(1, $h4-font-size);
+        @include trailer(0, $h4-font-size);
     }
 
     h5 {
         @include adjust-font-size-to( $h5-font-size );
         @include leader(1, $h5-font-size);
-        @include trailer(1, $h5-font-size);
+        @include trailer(0, $h5-font-size);
     }
 
     h6 {
         @include adjust-font-size-to( $h6-font-size );
         @include leader(1, $h6-font-size);
-        @include trailer(1, $h6-font-size);
+        @include trailer(0, $h6-font-size);
     }
 }
 
