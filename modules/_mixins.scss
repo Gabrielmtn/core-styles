@@ -287,7 +287,7 @@
 }
 
 @mixin horizontal-menu {
- > ul {
+  ul {
     margin: 2em 0;
     padding: 0;
     text-align: center;
@@ -297,22 +297,78 @@
       vertical-align: top;
       display: inline-block;
       overflow: visible;
-      ul {
-      display: none;
-        padding: 0;
-        text-align: center;
-        @include border-radius;
-        border: 5px solid $white;
-        background: $white;
-        > a {
-          border-top: 1px solid $off-white;
-          @include button( $grey, $white, $grey, $off-white );
-          @include border-radius(0px);
-          border: none;
+      width: 160px;
+      &.expanded {
+        a.dropdown:after {
+          content: " \25BC";
+          font-size: 8px;
+          color: $color-text-link;
+          position: relative;
+          top: -2px;
+          left: 2px;
         }
       }
       a {
         @include button( $grey, $off-white, $grey, $white );
+        border: 1px solid $off-white;
+        &:hover, &.active, &.active-trail {
+          border: 1px solid $off-white-dark;
+        }
+      }
+      ul {
+        padding: 0;
+        text-align: center;
+        @include border-radius;
+        border: 5px solid hsla(197,13%,89%,1);
+        background: $white;
+        width: 200px;
+        position: absolute;
+        margin-left: -30px;
+        margin-top: 20px;
+        &:after, &:before {
+          bottom: 100%;
+          border: solid transparent;
+          content: " ";
+          height: 0;
+          width: 0;
+          position: absolute;
+          pointer-events: none;
+        }
+        &:after {
+          border-color: rgba(255, 255, 255, 0);
+          border-bottom-color: #ffffff;
+          border-width: 14px;
+          left: 50%;
+          margin-left: -14px;
+        }
+        &:before {
+          border-color: rgba(223, 229, 231, 0);
+          border-bottom-color: #DFE5E7;
+          border-width: 22px;
+          left: 50%;
+          margin-left: -22px;
+          @include border-radius;
+        }
+        li {
+          display: block;
+          width: auto;
+          border-top: 1px solid $off-white;
+          &:first-child {
+            border-top: none;
+          }
+          a {
+            @include button( $grey, $white, $grey, $off-white );
+            @include border-radius(0px);
+            border: none;
+            text-transform: capitalize;
+            font-weight: 400;
+            letter-spacing: 0;
+            padding: 10px 0;
+            &:hover, &.active, &.active-trail {
+              border: none;
+            }
+          }
+        }
       }
     }
   }
