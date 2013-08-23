@@ -290,7 +290,7 @@
   ul {
     margin: 2em 0;
     padding: 0;
-    text-align: center;
+    text-align: right;
     li {
       margin:0;
       padding:0;
@@ -298,6 +298,7 @@
       display: inline-block;
       overflow: visible;
       width: 160px;
+      text-align: center;
       &.expanded {
         a.dropdown:after {
           content: " \25BC";
