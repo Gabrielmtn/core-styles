@@ -96,15 +96,21 @@
   background: $btn-primary-gradient-bottom;
   @include background-image( $btn-primary-background );
   border-bottom: 3px solid $btn-primary-border;
-  border-top: none;
+  border-top: 3px solid $btn-primary-gradient-top;
   border-right: none;
   border-left: none;
+  &:after {
+    content: "\2192";
+    position: absolute;
+    margin-left: 20px;
+  }
   &:hover {
     background: $btn-primary-background-hover;
+    border-top: 3px solid $btn-primary-background-hover;
   }
   &:active {
-    border-bottom: none;
-    border-top: 3px solid $btn-primary-border-active;
+    border-top: 3px solid $btn-primary-border;
+    border-bottom: 3px solid $btn-primary-gradient-bottom;
     @include background-image( $btn-primary-background-active );
   }
 }
@@ -190,9 +196,11 @@
   }
   a {
     width: 190px;
+    height: 55px;
     @include background-image( $tl-background );
     padding: 1em 0.25em;
-    display: block;
+    display: table-cell;
+    vertical-align: middle;
     text-decoration: none;
     color: $white;
     border-left: 1px solid $tl-link-border;
@@ -221,25 +229,27 @@
     padding: 0;
     white-space: normal;
     text-align: center;
-    border-bottom: 1px solid $tl-border;
-    border-top: 1px solid $white;
+    border-bottom: 1px solid $tl-dark-border;
+    border-top: 1px solid hsla(205,12%,41%,1);
   }
   a {
     width: 190px;
-    @include background-image( $tl-background );
+    height: 55px;
+    @include background-image( $tl-dark-background );
     padding: 1em 0.25em;
-    display: block;
+    display: table-cell;
+    vertical-align: middle;
     text-decoration: none;
     color: $white;
-    border-left: 1px solid $tl-link-border;
+    border-left: 1px solid $tl-dark-link-border;
     border-right: 1px solid transparent;
     &:hover {
-      @include background-image( $tl-background-hover );
+      @include background-image( $tl-dark-background-hover );
     }
     &:active, &.active {
-      @include background-image( $tl-background-active );
-      border-left: 1px solid $tl-link-border-active;
-      border-right: 1px solid $tl-link-border-active;
+      @include background-image( $tl-dark-background-active );
+      border-left: 1px solid $tl-dark-link-border-active;
+      border-right: 1px solid $tl-dark-link-border-active;
     }
   }
   li:first-child a {

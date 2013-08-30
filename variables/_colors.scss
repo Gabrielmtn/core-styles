@@ -75,3 +75,15 @@ $tl-background: linear-gradient( $tl-background-light, $tl-background-dark );
 $tl-background-hover: linear-gradient( $tl-background-hover-light, $tl-background-hover-dark );
 $tl-background-active: linear-gradient( $tl-background-active-light, $tl-background-active-dark );
 
+$tl-dark-border: hsla(204,18%,16%,1);
+$tl-dark-link-border: hsla(204,18%,16%,1);
+$tl-dark-link-border-active: hsla(203,28%,16%,1);
+$tl-dark-background-light: #445763;
+$tl-dark-background-dark: #34424b;
+$tl-dark-background-hover-light: lighten( $tl-dark-background-light, 5% );
+$tl-dark-background-hover-dark: lighten( $tl-dark-background-dark, 5% );
+$tl-dark-background-active-light: hsla(203,28%,16%,1) ;
+$tl-dark-background-active-dark: hsla(205,18%,19%,1);
+$tl-dark-background: linear-gradient( $tl-dark-background-light, $tl-dark-background-dark );
+$tl-dark-background-hover: linear-gradient( $tl-dark-background-hover-light, $tl-dark-background-hover-dark );
+$tl-dark-background-active: linear-gradient( $tl-dark-background-active-light, $tl-dark-background-active-dark );
