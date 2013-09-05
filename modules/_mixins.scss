@@ -90,7 +90,7 @@
   text-decoration: none;
   font-weight:700;
   color: $btn-primary-text;
-  padding: 1em 4em;
+  padding: 0.7em 4em 0.75em;
   display: inline-block;
   border-radius: $default-border-radius;
   background: $btn-primary-gradient-bottom;
@@ -121,8 +121,8 @@
   text-transform: uppercase;
   text-decoration: none;
   font-weight:700;
+  padding: 0.7em 4em 0.75em;
   color: $btn-secondary-text;
-  padding: 1em 4em;
   display: inline-block;
   border-radius: $default-border-radius;
   background: $btn-secondary-background;
@@ -142,7 +142,7 @@
   text-decoration: none;
   font-weight:700;
   color: $btn-strong-text;
-  padding: 1em 4em;
+  padding: 0.7em 4em 0.75em;
   display: inline-block;
   border-radius: $default-border-radius;
   background: $btn-strong-gradient-bottom;
@@ -335,7 +335,7 @@
         width: 200px;
         position: absolute;
         margin-left: -30px;
-        margin-top: 20px;
+        margin-top: 15px;
         &:after, &:before {
           bottom: 100%;
           border: solid transparent;
@@ -377,6 +377,9 @@
             padding: 10px 0;
             &:hover, &.active, &.active-trail {
               border: none;
+            }
+            &:active {
+              background: darken( $off-white, 10% );
             }
           }
         }
