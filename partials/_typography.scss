@@ -57,5 +57,6 @@ a {
   }
   &:active {
     color: $color-text-link-active;
+    outline: none;
   }
 }
