@@ -16,4 +16,7 @@ Once your folder structure for your SASS project is built, add this repo as a su
 
 Note: To make changes to the submodule repo, you must run git commands from within the submodule directory.
 
+## Deployment to Heroku
+If deploying a Git submodule to Heroku that include core-styles, you've gotta deal with authorization stuff by adding your un:password to .gitmodules.  See [the Heroku docs on submodules](https://devcenter.heroku.com/articles/git-submodules#protected-git-submodules).
+
 ---
