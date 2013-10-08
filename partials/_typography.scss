@@ -60,3 +60,23 @@ a {
     outline: none;
   }
 }
+
+// Code
+pre {
+  background: $off-white;
+  @include border-radius;
+  padding: 20px 30px;
+  @include transition(all);
+  line-height: 1em;
+  border-left: 3px solid $grey;
+  border-right: 10px solid $grey;
+  border-top: 1px solid $grey;
+  border-bottom: 1px solid $dark-grey;
+  &:hover {
+    position:relative;
+    width: 150%;
+    left: -50%;
+  }
+}
+
+
