@@ -1,5 +1,5 @@
 # Startup Institute Core Styles
-These are the core styles for Startup Institue. Sweet.
+These are the core styles for Startup Institute. Sweet.
 
 
 ##Installation
